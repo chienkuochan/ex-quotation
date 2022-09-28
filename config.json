@@ -1,0 +1,36 @@
+{
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "password": "12345",
+    "database": 0
+  },
+  "rabbitmq": {
+    "host": "localhost",
+    "port": "5672",
+    "vhost": "/",
+    "username": "guest",
+    "password": "guest",
+    "exchange": [
+      {
+        "name": "go.direct.exchange",
+        "type": "direct",
+        "durable": true,
+        "queue": [
+          {
+            "name": "go.queue1",
+            "key": "bind1",
+            "durable": true
+          },
+          {
+            "name": "go.queue2",
+            "key": "bind2",
+            "durable": true
+          }
+        ]
+      }
+    ]
+  },
+  "database": {
+  }
+}
